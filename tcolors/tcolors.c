@@ -6,7 +6,7 @@ typedef unsigned char byte;
 void tcolors(void) {
     {
         // Terminal Colors
-        printf(" ======  ======  ====== Terminal Colors  ======  ======  ======\n");
+        printf(" ======  ======  ======   4-bit  Colors  ======  ======  ======\n");
         for (byte i = 0; i < 8; i += 1) {
             printf(
                 "\x1b[4%1$1hhu;37m4%1$1hhu  \x1b[30m  4%1$1hhu",

@@ -11,4 +11,5 @@ OUTDIR=${OUTDIR:-./outbin}
 prog="$1"
 shift
 
+mkdir -p "${OUTDIR}"
 gcc -o "${OUTDIR}/${prog}" ${COMPILER_FLAGS} "${prog}/${prog}.c" "$@"

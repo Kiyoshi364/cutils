@@ -21,6 +21,12 @@ $ ./<outputbin>
 Prints all unicode characters (utf-8 encoded)
 that fit in 1 byte.
 
+## aucompress (Ancient UNIX Compress)
+
+Small and simple implementation of `compress`.
+Works with `stdin` and `stdout`.
+Use flag `-d` to decompress.
+
 ## becho (binary echo)
 
 Reads stdin and echos decoded utf-8 characters.

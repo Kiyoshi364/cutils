@@ -1,6 +1,9 @@
 # C Utils
 
-## How to run
+Some single-file executables and libraries.
+Each executable has its own folder.
+
+## How to run executables
 
 ```console
 $ ./build.sh <name> [-o <outputbin>]

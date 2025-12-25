@@ -24,7 +24,7 @@ that fit in 1 byte.
 ## aucompress (Ancient UNIX Compress)
 
 Small and simple implementation of `compress`.
-Works with `stdin` and `stdout`.
+Works only with `stdin` and `stdout`.
 Use flag `-d` to decompress.
 
 ## becho (binary echo)

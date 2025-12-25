@@ -31,6 +31,18 @@ Use flag `-d` to decompress.
 
 Reads stdin and echos decoded utf-8 characters.
 
+## sha1 (sha1sum)
+
+A simple implementation of `sha1sum`
+(no support for flags).
+
+The file `sha1/sha1.h` may be used as a library.
+To get the implementation of the functions,
+define `HASHI_SHA1_IMPLEMENTATION` before including this file.
+
+Also has a simple implementation of `sha1sum` (no support for flags).
+For the implementation, define `HASHI_SHA1_EXE` before including this file.
+
 ## tcolors (terminal colors)
 
 Shows ANSI terminal colors.

@@ -2,7 +2,7 @@
  *
  * Reads stdin and echos decoded utf-8 characters.
  *
- * Copyright (C) 2023 Daniel K Hashimoto
+ * Copyright (C) 2023, 2026 Daniel K Hashimoto
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,8 +28,10 @@ int main(void) {
     byte utf8_bytes_left = 0;
     while ((chr = getchar()) != EOF) {
         const byte c = (unsigned char) chr;
-        printf("%3hhu 0x%02hhX 0b_%04hhb_%04hhb\n",
-            c, c, (c >> 4), (c & 0xF)
+        printf("%3hhu 0x%02hhX 0b%01hhd%01hhd%01hhd%01hhd_%01hhd%01hhd%01hhd%01hhd\n",
+            c, c,
+            (c >> 7)&1, (c >> 6)&1, (c >> 5)&1, (c >> 4)&1,
+            (c >> 3)&1, (c >> 2)&1, (c >> 1)&1, (c >> 0)&1
         );
         if ( utf8_bytes_left > 0 ) {
             if ( (c & 0x80) == 0x80 && (c & 0x40) == 0x00 ) {

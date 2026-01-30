@@ -4,7 +4,7 @@
  * Pallets 0-7 (dull and vivid) and 8 bit mode.
  * (Note: Missing 24-bit colors)
  *
- * Copyright (C) 2024 Daniel K Hashimoto
+ * Copyright (C) 2024, 2026 Daniel K Hashimoto
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,15 +30,15 @@ void tcolors(void) {
         printf(" ======  ======  ======   4-bit  Colors  ======  ======  ======\n");
         for (byte i = 0; i < 8; i += 1) {
             printf(
-                "\x1b[4%1$1hhu;37m4%1$1hhu  \x1b[30m  4%1$1hhu",
-                i
+                "\x1b[4%hhu;37m4%hhu  \x1b[30m  4%hhu",
+                i, i, i
             );
         }
         printf("\x1b[0m\n");
         for (byte i = 0; i < 8; i += 1) {
             printf(
-                "\x1b[10%1$1hhu;37m10%1$1hhu \x1b[30m 10%1$1hhu",
-                i
+                "\x1b[10%hhu;37m10%hhu \x1b[30m 10%hhu",
+                i, i, i
             );
         }
     }
@@ -48,8 +48,8 @@ void tcolors(void) {
         byte i = 0;
         for (; i < 0x10; i += 1) {
             printf(
-                "\x1b[48;5;%1$1hhu;37m%1$-4hhu\x1b[30m%1$4hhu",
-                i
+                "\x1b[48;5;%1hhu;37m%-4hhu\x1b[30m%4hhu",
+                i, i, i
             );
             if (((i+1) & 0x7) == 0) {
                 printf("\x1b[49m\n");
@@ -57,8 +57,8 @@ void tcolors(void) {
         }
         for (; i < 0xE8; i += 1) {
             printf(
-                "\x1b[48;5;%1$1hhu;37m%1$-4hhu\x1b[30m%1$4hhu",
-                i
+                "\x1b[48;5;%hhu;37m%-4hhu\x1b[30m%4hhu",
+                i, i, i
             );
             if (((i+1-0x10) % 6) == 0) {
                 printf("\x1b[49m\n");
@@ -66,8 +66,8 @@ void tcolors(void) {
         }
         for (; i != 0; i += 1) {
             printf(
-                "\x1b[48;5;%1$1hhu;37m%1$-4hhu\x1b[30m%1$4hhu",
-                i
+                "\x1b[48;5;%hhu;37m%-4hhu\x1b[30m%4hhu",
+                i, i, i
             );
             if (((i+1) & 0x7) == 0) {
                 printf("\x1b[49m\n");
